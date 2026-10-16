@@ -1,0 +1,68 @@
+[
+  {
+    "codec": "GZIP",
+    "tables": [
+      {
+        "table": "raw_lineitem_gzip",
+        "source": "tpch.sf1.lineitem",
+        "rows": 6001215,
+        "files": 8,
+        "bytes": 150614377,
+        "write_seconds": 16.99084014300024,
+        "iceberg_codec_property": "gzip"
+      },
+      {
+        "table": "raw_orders_gzip",
+        "source": "tpch.sf1.orders",
+        "rows": 1500000,
+        "files": 2,
+        "bytes": 35129117,
+        "write_seconds": 6.623485828000412,
+        "iceberg_codec_property": "gzip"
+      },
+      {
+        "table": "raw_customer_gzip",
+        "source": "tpch.sf1.customer",
+        "rows": 150000,
+        "files": 1,
+        "bytes": 8046937,
+        "write_seconds": 2.262964841000212,
+        "iceberg_codec_property": "gzip"
+      }
+    ],
+    "bronze_total_bytes": 193790431
+  },
+  {
+    "codec": "ZSTD",
+    "tables": [
+      {
+        "table": "raw_lineitem_zstd",
+        "source": "tpch.sf1.lineitem",
+        "rows": 6001215,
+        "files": 8,
+        "bytes": 154423294,
+        "write_seconds": 8.72098820300016,
+        "iceberg_codec_property": "zstd"
+      },
+      {
+        "table": "raw_orders_zstd",
+        "source": "tpch.sf1.orders",
+        "rows": 1500000,
+        "files": 2,
+        "bytes": 36661809,
+        "write_seconds": 3.287694836999435,
+        "iceberg_codec_property": "zstd"
+      },
+      {
+        "table": "raw_customer_zstd",
+        "source": "tpch.sf1.customer",
+        "rows": 150000,
+        "files": 1,
+        "bytes": 8204009,
+        "write_seconds": 1.3902091129994005,
+        "iceberg_codec_property": "zstd"
+      }
+    ],
+    "bronze_total_bytes": 199289112
+  }
+]

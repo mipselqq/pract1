@@ -1,0 +1,28 @@
+{
+  "silver_rows_before": 57,
+  "silver_rows_after": 57,
+  "new_column_nulls": 57,
+  "bronze_first_snapshot_id": 8918826211794721819,
+  "bronze_old_rows": 6001215,
+  "bronze_current_rows": 6001217,
+  "bronze_snapshot_count": 3,
+  "silver_data_files_unchanged": true,
+  "silver_snapshots_unchanged": true,
+  "restored_table": "bench.lakehouse.restored_lineitem",
+  "restored_checks": [
+    [
+      "6001215",
+      "18005322964949",
+      "1.53078795E8"
+    ]
+  ],
+  "source_snapshot_checks": [
+    [
+      "6001215",
+      "18005322964949",
+      "1.53078795E8"
+    ]
+  ],
+  "restore_seconds": 6.716651607000131,
+  "restore_verified": true
+}

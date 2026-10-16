@@ -1,0 +1,26 @@
+{
+  "query": "SELECT name,custkey,orderkey,orderdate,totalprice,total_quantity FROM gold.lakehouse.q18_top100 ORDER BY totalprice DESC,orderdate,orderkey",
+  "streams": 10,
+  "executions": 10,
+  "ok": 10,
+  "errors": 0,
+  "single_seconds": 0.8671170850002454,
+  "batch_seconds": 2.991767278000225,
+  "single_requests_per_second": 1.15324679596149,
+  "batch_requests_per_second": 3.3425059741559378,
+  "throughput_ratio": 2.8983440369060025,
+  "individual_seconds": [
+    2.9634586030006176,
+    2.9380709100005333,
+    2.9505242679997536,
+    2.9709147890007443,
+    2.946130020000055,
+    2.96785020399966,
+    2.9495440489999964,
+    2.8809117749997313,
+    2.9890991069996744,
+    2.9682701570000063
+  ],
+  "all_results_verified": true,
+  "measurement": "end-to-end CLI wall time; materialized Gold has 57 rows, so startup/network dominate"
+}

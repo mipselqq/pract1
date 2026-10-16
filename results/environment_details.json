@@ -1,0 +1,61 @@
+{
+  "captured_at_utc": "2026-10-16T19:17:32.682662+00:00",
+  "cpu_model": "Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz",
+  "logical_cpus": 16,
+  "ram_total_bytes": 16691322880,
+  "platform": "Linux-7.2.7-1-cachyos-x86_64-with-glibc2.44",
+  "python": "3.14.7",
+  "scale_factor": "sf1",
+  "docker_images": {
+    "pgsty/silo:latest": [
+      "pgsty/silo@sha256:aaac6bce13eb99316b3c88bd20143fc3c38ab607585256a411a095c44ee57f62"
+    ],
+    "pgsty/mc:latest": [
+      "pgsty/mc@sha256:cfc83108c3abb371f8fb84d99c1fdc88f8c237e022409b0081fb7c0a3be634dd"
+    ],
+    "quay.io/lakekeeper/catalog:latest-main": [
+      "quay.io/lakekeeper/catalog@sha256:6edf0dcfdd78504d0319a42ed66009ba94b956eaa7ac237495ef6a948d119f47"
+    ],
+    "postgres:17": [
+      "postgres@sha256:2d2b8998d31037bf721cfdf764d76ba74171b4fab3431b7f72c27c56ddbdf9e3"
+    ],
+    "trinodb/trino:476": [
+      "trinodb/trino@sha256:00125e40d063bc4816d165482f6044872b18b56026fb959d3b28ce1f96ffbbee"
+    ],
+    "apache/spark:3.5.3": [
+      "apache/spark@sha256:d0f5d63bfbbffdbec08debb4911554ba671a2fa7398374db8db314d80328f576"
+    ]
+  },
+  "jar_sha256": {
+    "iceberg-aws-bundle-1.7.1.jar": "5d7c0baf877ee4296c4f98425165484404af4227fb487f1847a3cb1a577dfc3b",
+    "iceberg-spark-runtime-3.5_2.12-1.7.1.jar": "cdf7357865d8d91764e0f147a2d76bc3e1e2b8792ddc0d3be329b3d34aaf218c"
+  },
+  "baseline": "one CTAS and cold/warm CLI wall time for eight variants",
+  "repeated": "five warm runs per variant; server timings and query IDs in repeated_runs.csv",
+  "services": [
+    {
+      "Service": "lakekeeper",
+      "State": "running",
+      "Health": "",
+      "Image": "quay.io/lakekeeper/catalog:latest-main"
+    },
+    {
+      "Service": "minio",
+      "State": "running",
+      "Health": "",
+      "Image": "pgsty/silo:latest"
+    },
+    {
+      "Service": "postgres",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "postgres:17"
+    },
+    {
+      "Service": "trino",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "trinodb/trino:476"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "timestamp_utc": "2026-10-16T18:59:10.613001+00:00",
+  "platform": "Linux-7.2.7-1-cachyos-x86_64-with-glibc2.44",
+  "scale_factor": "sf1",
+  "variants": 8,
+  "measurement": "end-to-end wall time including Trino CLI startup; one CTAS and cold/warm aggregation per variant"
+}

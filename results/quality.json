@@ -1,0 +1,13 @@
+{
+  "raw_lineitem": 6001217,
+  "raw_orders": 1500000,
+  "raw_customer": 150000,
+  "clean_lineitem": 6001215,
+  "large_orders": 57,
+  "large_order_facts": 57,
+  "q18_top100": 57,
+  "invalid_rows": 1,
+  "duplicate_keys": 1,
+  "silver_unique_keys": 6001215,
+  "gold_min_quantity": "301.0"
+}

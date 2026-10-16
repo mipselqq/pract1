@@ -1,0 +1,8 @@
+{
+  "reference_rows": 57,
+  "gold_rows": 57,
+  "identical": true,
+  "reference_seconds": 1.788,
+  "gold_seconds": 0.853,
+  "first_orderkey": "4722021"
+}

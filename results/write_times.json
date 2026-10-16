@@ -1,0 +1,10 @@
+{
+  "sales_parquet_none": 7.347,
+  "sales_parquet_snappy": 11.011,
+  "sales_parquet_gzip": 16.717,
+  "sales_parquet_zstd": 11.415,
+  "sales_orc_none": 11.701,
+  "sales_orc_snappy": 10.889,
+  "sales_orc_gzip": 12.8,
+  "sales_orc_zstd": 11.565
+}

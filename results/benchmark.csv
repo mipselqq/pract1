@@ -1,0 +1,9 @@
+variant,format,codec,rows,files,data_bytes,write_seconds,cold_seconds,warm_seconds,q18_seconds,q18_first_orderkey,manifests,manifest_bytes,iceberg_codec_property
+parquet_none,PARQUET,NONE,6001215,8,372890415,7.347,1.744,1.337,2.93,4722021,1,9565,uncompressed
+parquet_snappy,PARQUET,SNAPPY,6001215,8,208044016,11.011,1.709,1.188,2.963,4722021,1,9558,snappy
+parquet_gzip,PARQUET,GZIP,6001215,8,150633406,16.717,1.788,1.409,2.787,4722021,1,9549,gzip
+parquet_zstd,PARQUET,ZSTD,6001215,8,154363129,11.415,1.622,1.362,2.809,4722021,1,9555,zstd
+orc_none,ORC,NONE,6001215,8,452629144,11.701,1.861,1.393,3.035,4722021,1,8975,none
+orc_snappy,ORC,SNAPPY,6001215,8,221448014,10.889,1.751,1.463,2.716,4722021,1,8973,snappy
+orc_gzip,ORC,GZIP,6001215,8,155820078,12.8,2.094,1.423,2.551,4722021,1,8965,zlib
+orc_zstd,ORC,ZSTD,6001215,8,161261136,11.565,1.968,1.475,2.996,4722021,1,8962,zstd

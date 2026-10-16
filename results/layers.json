@@ -1,0 +1,892 @@
+[
+  {
+    "layer": "bronze",
+    "table": "raw_lineitem",
+    "rows": 6001217,
+    "files": 10,
+    "bytes": 154417545,
+    "format": "PARQUET",
+    "parquet_codec": "zstd",
+    "orc_codec": "",
+    "columns": [
+      [
+        "orderkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "partkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "suppkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "linenumber",
+        "integer",
+        "",
+        ""
+      ],
+      [
+        "quantity",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "extendedprice",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "discount",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "tax",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "returnflag",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "linestatus",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "shipdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "commitdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "receiptdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "shipinstruct",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "shipmode",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "comment",
+        "varchar",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE bronze.lakehouse.raw_lineitem (\n   orderkey bigint,\n   partkey bigint,\n   suppkey bigint,\n   linenumber integer,\n   quantity double,\n   extendedprice double,\n   discount double,\n   tax double,\n   returnflag varchar,\n   linestatus varchar,\n   shipdate date,\n   commitdate date,\n   receiptdate date,\n   shipinstruct varchar,\n   shipmode varchar,\n   comment varchar\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://bronze/raw_lineitem-ffcf000d90044acf8cd945a879bba09e',\n   max_commit_retry = 4\n)"
+  },
+  {
+    "layer": "bronze",
+    "table": "raw_orders",
+    "rows": 1500000,
+    "files": 2,
+    "bytes": 36639834,
+    "format": "PARQUET",
+    "parquet_codec": "zstd",
+    "orc_codec": "",
+    "columns": [
+      [
+        "orderkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "custkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "orderstatus",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "totalprice",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "orderdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "orderpriority",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "clerk",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "shippriority",
+        "integer",
+        "",
+        ""
+      ],
+      [
+        "comment",
+        "varchar",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE bronze.lakehouse.raw_orders (\n   orderkey bigint,\n   custkey bigint,\n   orderstatus varchar,\n   totalprice double,\n   orderdate date,\n   orderpriority varchar,\n   clerk varchar,\n   shippriority integer,\n   comment varchar\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://bronze/raw_orders-a5c73d73a59e4e74be43ad24a426342b',\n   max_commit_retry = 4\n)"
+  },
+  {
+    "layer": "bronze",
+    "table": "raw_customer",
+    "rows": 150000,
+    "files": 1,
+    "bytes": 8168595,
+    "format": "PARQUET",
+    "parquet_codec": "zstd",
+    "orc_codec": "",
+    "columns": [
+      [
+        "custkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "name",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "address",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "nationkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "phone",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "acctbal",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "mktsegment",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "comment",
+        "varchar",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE bronze.lakehouse.raw_customer (\n   custkey bigint,\n   name varchar,\n   address varchar,\n   nationkey bigint,\n   phone varchar,\n   acctbal double,\n   mktsegment varchar,\n   comment varchar\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://bronze/raw_customer-b3d28e7e08c643299e26789583310ac9',\n   max_commit_retry = 4\n)"
+  },
+  {
+    "layer": "bronze",
+    "table": "injected_anomalies",
+    "rows": 1,
+    "files": 1,
+    "bytes": 209,
+    "format": "PARQUET",
+    "parquet_codec": "zstd",
+    "orc_codec": "",
+    "columns": [
+      [
+        "batch_id",
+        "integer",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE bronze.lakehouse.injected_anomalies (\n   batch_id integer\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://bronze/injected_anomalies-5e4620c68f0d483aabcd7f33b6ca94a4',\n   max_commit_retry = 4\n)"
+  },
+  {
+    "layer": "bronze",
+    "table": "raw_lineitem_gzip",
+    "rows": 6001215,
+    "files": 8,
+    "bytes": 150614377,
+    "format": "PARQUET",
+    "parquet_codec": "gzip",
+    "orc_codec": "",
+    "columns": [
+      [
+        "orderkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "partkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "suppkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "linenumber",
+        "integer",
+        "",
+        ""
+      ],
+      [
+        "quantity",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "extendedprice",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "discount",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "tax",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "returnflag",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "linestatus",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "shipdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "commitdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "receiptdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "shipinstruct",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "shipmode",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "comment",
+        "varchar",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE bronze.lakehouse.raw_lineitem_gzip (\n   orderkey bigint,\n   partkey bigint,\n   suppkey bigint,\n   linenumber integer,\n   quantity double,\n   extendedprice double,\n   discount double,\n   tax double,\n   returnflag varchar,\n   linestatus varchar,\n   shipdate date,\n   commitdate date,\n   receiptdate date,\n   shipinstruct varchar,\n   shipmode varchar,\n   comment varchar\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://bronze/raw_lineitem_gzip-c057629420e24665a366ef398cb1d82a',\n   max_commit_retry = 4\n)"
+  },
+  {
+    "layer": "bronze",
+    "table": "raw_lineitem_zstd",
+    "rows": 6001215,
+    "files": 8,
+    "bytes": 154423294,
+    "format": "PARQUET",
+    "parquet_codec": "zstd",
+    "orc_codec": "",
+    "columns": [
+      [
+        "orderkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "partkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "suppkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "linenumber",
+        "integer",
+        "",
+        ""
+      ],
+      [
+        "quantity",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "extendedprice",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "discount",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "tax",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "returnflag",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "linestatus",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "shipdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "commitdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "receiptdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "shipinstruct",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "shipmode",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "comment",
+        "varchar",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE bronze.lakehouse.raw_lineitem_zstd (\n   orderkey bigint,\n   partkey bigint,\n   suppkey bigint,\n   linenumber integer,\n   quantity double,\n   extendedprice double,\n   discount double,\n   tax double,\n   returnflag varchar,\n   linestatus varchar,\n   shipdate date,\n   commitdate date,\n   receiptdate date,\n   shipinstruct varchar,\n   shipmode varchar,\n   comment varchar\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://bronze/raw_lineitem_zstd-681b61d9698c46e2831ff87ae2925b9d',\n   max_commit_retry = 4\n)"
+  },
+  {
+    "layer": "bronze",
+    "table": "raw_orders_gzip",
+    "rows": 1500000,
+    "files": 2,
+    "bytes": 35129117,
+    "format": "PARQUET",
+    "parquet_codec": "gzip",
+    "orc_codec": "",
+    "columns": [
+      [
+        "orderkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "custkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "orderstatus",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "totalprice",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "orderdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "orderpriority",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "clerk",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "shippriority",
+        "integer",
+        "",
+        ""
+      ],
+      [
+        "comment",
+        "varchar",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE bronze.lakehouse.raw_orders_gzip (\n   orderkey bigint,\n   custkey bigint,\n   orderstatus varchar,\n   totalprice double,\n   orderdate date,\n   orderpriority varchar,\n   clerk varchar,\n   shippriority integer,\n   comment varchar\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://bronze/raw_orders_gzip-f39082d2c91c470a8437d41aae1ded0b',\n   max_commit_retry = 4\n)"
+  },
+  {
+    "layer": "bronze",
+    "table": "raw_orders_zstd",
+    "rows": 1500000,
+    "files": 2,
+    "bytes": 36661809,
+    "format": "PARQUET",
+    "parquet_codec": "zstd",
+    "orc_codec": "",
+    "columns": [
+      [
+        "orderkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "custkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "orderstatus",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "totalprice",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "orderdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "orderpriority",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "clerk",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "shippriority",
+        "integer",
+        "",
+        ""
+      ],
+      [
+        "comment",
+        "varchar",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE bronze.lakehouse.raw_orders_zstd (\n   orderkey bigint,\n   custkey bigint,\n   orderstatus varchar,\n   totalprice double,\n   orderdate date,\n   orderpriority varchar,\n   clerk varchar,\n   shippriority integer,\n   comment varchar\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://bronze/raw_orders_zstd-4e379af7433f40d8b349fa8148e6718e',\n   max_commit_retry = 4\n)"
+  },
+  {
+    "layer": "bronze",
+    "table": "raw_customer_gzip",
+    "rows": 150000,
+    "files": 1,
+    "bytes": 8046937,
+    "format": "PARQUET",
+    "parquet_codec": "gzip",
+    "orc_codec": "",
+    "columns": [
+      [
+        "custkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "name",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "address",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "nationkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "phone",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "acctbal",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "mktsegment",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "comment",
+        "varchar",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE bronze.lakehouse.raw_customer_gzip (\n   custkey bigint,\n   name varchar,\n   address varchar,\n   nationkey bigint,\n   phone varchar,\n   acctbal double,\n   mktsegment varchar,\n   comment varchar\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://bronze/raw_customer_gzip-4e171f13eb6d4ea78cd275909e00bd5d',\n   max_commit_retry = 4\n)"
+  },
+  {
+    "layer": "bronze",
+    "table": "raw_customer_zstd",
+    "rows": 150000,
+    "files": 1,
+    "bytes": 8204009,
+    "format": "PARQUET",
+    "parquet_codec": "zstd",
+    "orc_codec": "",
+    "columns": [
+      [
+        "custkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "name",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "address",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "nationkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "phone",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "acctbal",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "mktsegment",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "comment",
+        "varchar",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE bronze.lakehouse.raw_customer_zstd (\n   custkey bigint,\n   name varchar,\n   address varchar,\n   nationkey bigint,\n   phone varchar,\n   acctbal double,\n   mktsegment varchar,\n   comment varchar\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://bronze/raw_customer_zstd-280fbc249aa342779e6e2cce68688a28',\n   max_commit_retry = 4\n)"
+  },
+  {
+    "layer": "silver",
+    "table": "clean_lineitem",
+    "rows": 6001215,
+    "files": 2,
+    "bytes": 12506961,
+    "format": "PARQUET",
+    "parquet_codec": "zstd",
+    "orc_codec": "",
+    "columns": [
+      [
+        "orderkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "linenumber",
+        "integer",
+        "",
+        ""
+      ],
+      [
+        "quantity",
+        "double",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE silver.lakehouse.clean_lineitem (\n   orderkey bigint,\n   linenumber integer,\n   quantity double\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://silver/clean_lineitem-597a13f249ce4572bedb05e1282ba08c',\n   max_commit_retry = 4\n)"
+  },
+  {
+    "layer": "silver",
+    "table": "large_orders",
+    "rows": 57,
+    "files": 1,
+    "bytes": 825,
+    "format": "PARQUET",
+    "parquet_codec": "zstd",
+    "orc_codec": "",
+    "columns": [
+      [
+        "orderkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "total_quantity",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "review_note",
+        "varchar",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE silver.lakehouse.large_orders (\n   orderkey bigint,\n   total_quantity double,\n   review_note varchar\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://silver/large_orders-a283165b875c420eb04a976f0c6dd3b8',\n   max_commit_retry = 4\n)"
+  },
+  {
+    "layer": "silver",
+    "table": "large_order_facts",
+    "rows": 57,
+    "files": 1,
+    "bytes": 2372,
+    "format": "PARQUET",
+    "parquet_codec": "zstd",
+    "orc_codec": "",
+    "columns": [
+      [
+        "name",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "custkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "orderkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "orderdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "totalprice",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "total_quantity",
+        "double",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE silver.lakehouse.large_order_facts (\n   name varchar,\n   custkey bigint,\n   orderkey bigint,\n   orderdate date,\n   totalprice double,\n   total_quantity double\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://silver/large_order_facts-b7898a7e1b204ebeb2bf4ac0373e89f8',\n   max_commit_retry = 4\n)"
+  },
+  {
+    "layer": "gold",
+    "table": "q18_top100",
+    "rows": 57,
+    "files": 1,
+    "bytes": 2369,
+    "format": "PARQUET",
+    "parquet_codec": "zstd",
+    "orc_codec": "",
+    "columns": [
+      [
+        "name",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "custkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "orderkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "orderdate",
+        "date",
+        "",
+        ""
+      ],
+      [
+        "totalprice",
+        "double",
+        "",
+        ""
+      ],
+      [
+        "total_quantity",
+        "double",
+        "",
+        ""
+      ]
+    ],
+    "ddl": "CREATE TABLE gold.lakehouse.q18_top100 (\n   name varchar,\n   custkey bigint,\n   orderkey bigint,\n   orderdate date,\n   totalprice double,\n   total_quantity double\n)\nWITH (\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://gold/q18_top100-deb1968b1914427eb697fb8a01a62d38',\n   max_commit_retry = 4\n)"
+  }
+]
